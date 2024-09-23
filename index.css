@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+}
+.container {
+    width: 100%;
+    height: 90vh;
+}
+header {
+    flex: 1;
+    color: white;
+    margin-top: -2%;
+    background-color: #333;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: end;
+}
+header > input {
+    margin-right: 10%;
+    margin-bottom: 1%;
+    height: 40px;
+    width: 90px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+header > h1 {
+    margin-left: 5%;
+}
+#openDialog {
+    position: fixed;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    font-size: 50px;
+    background-color: #1d14c7;
+    color: white;
+    border: none;
+    bottom: 20px;
+    right: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+#openDialog:hover {
+    transform: scale(1.1);
+}
+#myDialog {
+    width:min(60%,300px);
+    height: 60%;
+    text-align: center;
+    background-color: #020024;
+    color: white;
+    border: none;
+} 
+.dialog-content{
+    display: flex;
+    flex-direction: column;
+}
+
+#myDialog > button {
+    margin-top: 60px;
+}
+#Add {
+    position: relative;
+    top: 50px;
+}
+#myDialog input[type="checkbox"] {
+    position: relative;
+    right: 50px;
+    height: 20px;
+
+} 
+#label {
+    position: relative;
+    top: 25px;
+    right: 100px;
+    font-size: x-large;
+}
+#myDialog input{
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    outline: none;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #020024;
+    color: white;
+
+}
+#myDialog input::placeholder{
+  
+}
+#myDialog input[type="text"] {
+    width: 80%;
+    margin-bottom: 20px;
+    height: 30px;
+}
+#myDialog input[type="number"] {
+    width: 80%;
+    height: 30px;
+} 
+.cards {
+    
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background-color: #7d7b94;
+}
+.cards > div{
+    margin: 10px;
+}
+.cards > :not(.dialog){
+    width:min(40%,300px);
+   
+
+    
+    height: 40%;
+    background-color: #020024;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+.card h2{
+    font-size: 30px;
+}
+
+.card p{
+    font-size: large;
+}
+.delete{
+    background-color: #1d14c7;
+}
+

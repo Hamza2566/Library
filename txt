@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            height: 105vh;
+        }
+        header {
+            color: white;
+            margin-top: -2%;
+            background-color: #333;
+            width: 100%;
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            align-items: flex-end;
+        }
+        header > input {
+            margin-right: 10%;
+            margin-bottom: 1%;
+            height: 40px;
+            width: 90px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        header > h1 {
+            margin-left: 5%;
+        }
+        #openDialog {
+            position: fixed;
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            font-size: 50px;
+            background-color: #020024;
+            color: white;
+            border: none;
+            bottom: 20px;
+            right: 20px;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        #openDialog:hover {
+            transform: scale(1.1);
+        }
+        #myDialog {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            height: 60%;
+            text-align: center;
+        }
+        #myDialog > button {
+            margin-top: 60px;
+        }
+        #Add {
+            position: relative;
+            top: 50px;
+        }
+        #myDialog input[type="checkbox"] {
+            position: relative;
+            top: 70px;
+        } 
+        #label {
+            position: relative;
+            top: 87px;
+            right: 30px;
+        }
+        #myDialog input[type="text"] {
+            width: 90%;
+            margin-bottom: 20px;
+            height: 70px;
+        }
+        #myDialog input[type="number"] {
+            width: 90%;
+            height: 80px;
+        }
+        .cards {
+            width: 100%;
+            height: 100%;
+            background-color: #020024;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Library</h1>
+            <input type="button" value="Login">
+        </header>
+        <div class="cards">
+            <div class="dialog">
+                <button id="openDialog">+</button>
+                <dialog id="myDialog">
+                    <h3>Book</h3>
+                    <input type="text" name="name" class="input" placeholder="Name">
+                    <input type="text" name="author" class="input" placeholder="Author">
+                    <input type="number" name="pages" class="input" placeholder="Page Number">
+                    <label for="Read" id="label">Read</label>
+                    <input type="checkbox" name="" id="" placeholder="">
+                    <button id="Add">Add Book</button>
+                    <button id="closeDialog">Close</button>
+                </dialog>
+            </div> 
+        </div> 
+    </div>
+
+    <script>
+        const dialog = document.getElementById('myDialog'); // Define dialog
+        const openDialogButton = document.getElementById('openDialog');
+        const closeDialogButton = document.getElementById('closeDialog');
+        const Add = document.getElementById('Add');
+
+        openDialogButton.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        closeDialogButton.addEventListener('click', () => {
+            dialog.close();
+        });
+
+        Add.addEventListener('click', () => {
+            console.log('Book added!'); // Placeholder action
+            dialog.close(); // Optionally close the dialog after adding
+        });
+
+        openDialogButton.addEventListener('mouseover', () => {
+            openDialogButton.style.transform = 'rotate(100deg)';
+            openDialogButton.style.width = '80px';
+            openDialogButton.style.height = '80px';
+        });
+
+        openDialogButton.addEventListener('mouseout', () => {
+            openDialogButton.style.transform = 'rotate(0deg)';
+            openDialogButton.style.width = '70px';
+            openDialogButton.style.height = '70px';
+        });
+    </script>
+</body>
+</html>
